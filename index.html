@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Calculadora JS Richard</title>
+
+     <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body{
+			font-family: arial;
+			background: #ccc;
+			color: #3ba8db;
+		}
+
+		.contenedor{
+			width: 70%;
+			margin: 100px auto;
+			background: #21295c;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		.inputs{
+			width: 80%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.inputs input{
+			width: 50%;
+			margin: 10px;
+			padding: 20px;
+			text-align: center;
+			font-size: 25px;
+			font-weight: 600;
+			color: #21295c;
+		}
+
+		.btns{
+			display: flex;
+			flex-direction: row;
+			width: 80%;
+			justify-content: space-around;
+		}
+
+		.btns button{
+			width: 25%;
+			height: 50px;
+			margin: 10px;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 14px;
+			background: #3ba8db;
+			color: #fff;
+			border: 0;
+			transition: all 0.3s;
+		}
+
+
+		.btns button:hover{
+			background: #92f8ff80;
+		}
+
+		.result{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 80%;
+			margin: 30px 0 10px 0;
+		}
+
+		.result p{
+			color: #fff;
+			font-size: 45px;
+			font-weight: 700;
+		}
+		
+	</style>
+</head>
+<body>
+     <div class="contenedor">
+		<div id="inputs" class="inputs">
+			<input type="number" id="numero1">
+			<input type="number" id="numero2">
+		</div>
+
+		<div id="btns" class="btns">
+			<button id="suma" onclick="sumar()">Sumar</button>
+			<button id="resta" onclick="restar()">Restar</button>
+			<button id="multiplica" onclick="multiplicar()">Multiplicar</button>
+			<button id="divide" onclick="dividir()">Dividir</button>
+			<button id="exponente" onclick="exponente()">Exponente</button>
+			<button id="raiz" onclick="raiz()">Raiz</button>
+
+
+		</div>
+			
+		<div class="result">
+			<p id="resultado">-</p>
+		</div>	
+	</div>
+
+	<script>
+		function sumar(){
+			var num1 = document.getElementById("numero1").value ;
+			var num2 = document.getElementById("numero2").value ;
+
+			//alert("suma: " + num1 + num2);
+
+			var resultado = parseInt(num1) + parseInt(num2);
+			//alert("resultado: " + resultado);
+			
+			var mostrar = document.getElementById("resultado");
+			mostrar.innerHTML = resultado;
+		}
+	</script>
+
+	<script>
+		function restar(){
+
+			var num1 = document.getElementById("numero1").value;
+			var num2 = document.getElementById("numero2").value;
+
+			//alert("resta: " - num1 - num2);
+
+			var resultado = parseInt(num1) - parseInt(num2);
+			// alert("resultado:" - resultado);
+
+			var mostrar = document.getElementById("resultado");
+			mostrar.innerHTML = resultado;
+		}
+	</script>
+
+	<script>
+		function multiplicar(){
+
+			var num1 = document.getElementById("numero1").value;
+			var num2 = document.getElementById("numero2").value;
+
+			//alert("multiplicar" * num1 * num2);
+
+			var resultado = parseInt(num1) * parseInt(num2);
+			// alert("resultado:" * resultado);
+
+			var mostrar = document.getElementById("resultado");
+			mostrar.innerHTML = resultado;
+		}
+	</script>
+
+	<script>
+		function dividir(){
+
+			var num1 = document.getElementById("numero1").value;
+			var num2 = document.getElementById("numero2").value;
+
+			//alert("dividir" / num1 / num2);
+
+			var resultado = parseInt(num1) / parseInt(num2);
+			// alert("resultado:" / resultado);
+
+			var mostrar = document.getElementById("resultado");
+			mostrar.innerHTML = resultado;
+		}
+	</script>
+
+	<script> 
+		function exponente(){
+
+		
+			var num1 = document.getElementById("numero1").value;
+			var num2 = document.getElementById("numero2").value;
+
+			var resultado = Math.pow(parseFloat(num1), parseFloat(num2));
+			
+			var mostrar = document.getElementById("resultado");
+			mostrar.innerHTML = resultado;
+		}
+	</script>
+
+	<script> 
+		function raiz() {
+			var num1 = document.getElementById("numero1").value;
+
+			// Convertimos a número flotante y sacamos la raíz
+			var resultado = Math.sqrt(parseFloat(num1));
+
+			// Mostramos el resultado
+			document.getElementById("resultado").innerHTML = `√${num1} = ${resultado}`;
+		}
+	</script>
+</body>
+</html>
